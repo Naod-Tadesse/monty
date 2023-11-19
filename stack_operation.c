@@ -74,3 +74,26 @@ void pint_sq(stack_t **tack, unsigned int line_c)
 	}
 	printf("%d\n", (*tack)->n);
 }
+
+/**
+ * pop_sq - removes an element from the top
+ * @tack: the stack
+ * @line_c: line num
+ * Return: nothing
+ */
+
+void pop_sq(stack_t **tack, unsigned int line_c)
+{
+	stack *l;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: cant't pop an empty stack\n", line_c);
+		frees(*tack);
+		valie = 4;
+		return;
+	}
+	l = *stack;
+	*stack = (*stack)->next;
+	free(l);
+}
