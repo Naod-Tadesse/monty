@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	instruction_t co_op[] = {{"push", push_sq}, {"pall", pall_sq},
 {"pint", pint_sq}, {"pop", pop_sq}, {"swap", swap_sq}, {"add", add_sq},
-{"nop", nop_sq}, {"sub", sub_sq}, {NULL, NULL}};
+{"nop", nop_sq}, {"sub", sub_sq}, {"div", div_sq}, {NULL, NULL}};
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");

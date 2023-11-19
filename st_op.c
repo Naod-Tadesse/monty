@@ -46,7 +46,7 @@ void nop_sq(stack_t **tak, unsigned int line_c)
 }
 
 /**
- * sub_sq - adds top two elements
+ * sub_sq - subtracts top two elements
  * @subon: the stack
  * @line_c: the number of lines
  * Return: nothing
@@ -75,5 +75,38 @@ void sub_sq(stack_t **subon, unsigned int line_c)
 	second_top = (*subon)->next;
 	second_top->n = second_top->n - first_top->n;
 	*subon = second_top;
+	free(first_top);
+}
+
+/**
+ * div_sq - devides top two elements
+ * @divon: the stack
+ * @line_c: the number of lines
+ * Return: nothing
+ */
+
+void div_sq(stack_t **divon, unsigned int line_c)
+{
+	stack_t *first_top;
+	stack_t *second_top;
+
+	if (*divon == NULL)
+	{
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_c);
+		frees(*divon);
+		valie = 4;
+		return;
+	}
+	else if ((*divon)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_c);
+		frees(*divon);
+		valie = 4;
+		return;
+	}
+	first_top = *divon;
+	second_top = (*divon)->next;
+	second_top->n = second_top->n - first_top->n;
+	*divon = second_top;
 	free(first_top);
 }
