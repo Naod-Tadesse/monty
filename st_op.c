@@ -44,3 +44,36 @@ void nop_sq(stack_t **tak, unsigned int line_c)
 	(void)tak;
 	(void)line_c;
 }
+
+/**
+ * sub_sq - adds top two elements
+ * @subon: the stack
+ * @line_c: the number of lines
+ * Return: nothing
+ */
+
+void sub_sq(stack_t **subon, unsigned int line_c)
+{
+	stack_t *first_top;
+	stack_t *second_top;
+
+	if (*subon == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_c);
+		frees(*subon);
+		valie = 4;
+		return;
+	}
+	else if ((*subon)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_c);
+		frees(*subon);
+		valie = 4;
+		return;
+	}
+	first_top = *subon;
+	second_top = (*subon)->next;
+	second_top->n = second_top->n - first_top->n;
+	*subon = second_top;
+	free(first_top);
+}
