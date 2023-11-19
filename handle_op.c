@@ -9,20 +9,20 @@
 
 int handle_op(FILE *mfile, stack_t **stack)
 {
-	char *del = " \n\t", *command = NULL;
+	char *command = NULL;
 	size_t size = 0;
 	int  i = 0;
 	unsigned int line_c = 1;
 	char *first;
 	instruction_t co_op[] = {{"push", push_sq}, {"pall", pall_sq}, {NULL, NULL}};
 
-	while (getline(&command, &size, mfile) != -1)
+	while (getline(&command, &size, mfile) > 0)
 	{
-		first = _strtokenizer(command, del);
+		first = _strtokenizer(command, " \n\t");
 		i = 0;
 		while (co_op[i].opcode && first)
 		{
-			if (_strcmp(command, co_op[i].opcode) == 0)
+			if (strcmp(first, co_op[i].opcode) == 0)
 			{
 				co_op[i].f(stack, line_c);
 				break;

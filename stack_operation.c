@@ -12,7 +12,7 @@ void push_sq(stack_t **stack, unsigned int line_c)
 	stack_t *append;
 
 	second = _strtokenizer(NULL, " \n\t");
-	if (!_isdi(second))
+	if (!second || !_isdi(second))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_c);
 		frees(*stack);
