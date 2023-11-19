@@ -48,10 +48,10 @@ void mod_sq(stack_t **modon, unsigned int line_c)
  * Return: nothing
  */
 
-void pchar_sq(stack_t **p, line_c)
+void pchar_sq(stack_t **p, unsigned int line_c)
 {
 	int ch = (*p)->n;
-	stack_t *ht = p;
+	stack_t *ht = *p;
 
 	if (!ht)
 	{
@@ -67,5 +67,5 @@ void pchar_sq(stack_t **p, line_c)
 		valie = 4;
 		return;
 	}
-	printf("%c", ch);
+	printf("%c\n", ch);
 }
