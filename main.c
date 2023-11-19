@@ -10,7 +10,9 @@ int main(int argc, char *argv[])
 {
 	FILE *mfile;
 	stack_t *stack = NULL;
-
+	instruction_t co_op[] = {{"push", push_sq}, {"pall", pall_sq},
+{"pint", pint_sq}, {"pop", pop_sq}, {"swap", swap_sq}, {"add", add_sq},
+{NULL, NULL}};
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -23,7 +25,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	handle_op(mfile, &stack);
+	handle_op(mfile, &stack, co_op);
 	frees(stack);
 	fclose(mfile);
 	return (0);
