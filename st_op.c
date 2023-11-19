@@ -99,7 +99,7 @@ void div_sq(stack_t **divon, unsigned int line_c)
 	}
 	else if ((*divon)->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_c);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_c);
 		frees(*divon);
 		valie = 4;
 		return;
