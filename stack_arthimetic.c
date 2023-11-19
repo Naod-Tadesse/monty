@@ -88,7 +88,7 @@ void pstr_sq(stack_t **st, unsigned int line_c)
 
 	while (t != NULL)
 	{
-		if (*st < 0 || *st == 0 || *st > 127)
+		if (!(t->n > 0 && t->n < 128))
 			break;
 		printf("%c", t->n);
 		t = t->next;
