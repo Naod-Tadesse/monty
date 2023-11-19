@@ -11,7 +11,7 @@ int handle_op(FILE *mfile, stack_t **stack)
 	char *command = NULL, *first;
 	size_t size = 0, i = 0;
 	unsigned int line_c = 1;
-	instruction_t co_op[] = {{"push", push_sq}, {"pall", pall_sq}, {NULL, NULL}};
+	instruction_t co_op[] = {{"push", push_sq}, {"pall", pall_sq}, {"pint", pint_sq}, {NULL, NULL}};
 
 	valie = 0;
 	while (getline(&command, &size, mfile) > 0)
