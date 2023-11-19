@@ -16,7 +16,8 @@ void push_sq(stack_t **stack, unsigned int line_c)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_c);
 		frees(*stack);
-		exit(EXIT_FAILURE);
+		valie = 4;
+		return;
 	}
 	l = atoi(second);
 	append = malloc(sizeof(stack_t));

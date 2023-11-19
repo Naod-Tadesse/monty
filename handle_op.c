@@ -1,21 +1,19 @@
 #include "monty.h"
-
+unsigned int valie = 0;
 /**
  * handle_op - this function handles opcode operation
  * @mfile: file pointer
  * @stack: stack pointer
  * Return: if success 1, or 0
  */
-
 int handle_op(FILE *mfile, stack_t **stack)
 {
-	char *command = NULL;
-	size_t size = 0;
-	int  i = 0;
+	char *command = NULL, *first;
+	size_t size = 0, i = 0;
 	unsigned int line_c = 1;
-	char *first;
 	instruction_t co_op[] = {{"push", push_sq}, {"pall", pall_sq}, {NULL, NULL}};
 
+	valie = 0;
 	while (getline(&command, &size, mfile) > 0)
 	{
 		first = _strtokenizer(command, " \n\t");
@@ -25,15 +23,21 @@ int handle_op(FILE *mfile, stack_t **stack)
 			if (strcmp(first, co_op[i].opcode) == 0)
 			{
 				co_op[i].f(stack, line_c);
+				if (valie == 4)
+				{
+					fclose(mfile);
+					free(command);
+					valie = 0;
+					exit(1);
+				}
 				break;
 			}
 			i++;
 		}
 		line_c++;
+		free(command);
 	}
-	free(command);
 	if (first)
-	{
 		if (!co_op[i].opcode)
 		{
 			line_c = line_c - 1;
@@ -43,6 +47,5 @@ int handle_op(FILE *mfile, stack_t **stack)
 			frees(*stack);
 			exit(1);
 		}
-	}
 	return (0);
 }
