@@ -37,7 +37,6 @@ int handle_op(FILE *mfile, stack_t **stack)
 		line_c++;
 	}
 	free(command);
-	
 	if (first)
 		if (!co_op[i].opcode)
 		{
