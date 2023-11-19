@@ -25,7 +25,7 @@ void push_sq(stack_t **stack, unsigned int line_c)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		frees(*stack);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	append->n = l;
 	append->prev = NULL;

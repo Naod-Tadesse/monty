@@ -28,7 +28,7 @@ int handle_op(FILE *mfile, stack_t **stack)
 					fclose(mfile);
 					free(command);
 					valie = 0;
-					exit(1);
+					exit(EXIT_FAILURE);
 				}
 				break;
 			}
@@ -45,7 +45,7 @@ int handle_op(FILE *mfile, stack_t **stack)
 			free(command);
 			fclose(mfile);
 			frees(*stack);
-			exit(1);
+			exit(EXIT_FAILURE);
 		}
 	return (0);
 }
