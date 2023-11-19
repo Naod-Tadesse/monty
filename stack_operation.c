@@ -84,16 +84,16 @@ void pint_sq(stack_t **tack, unsigned int line_c)
 
 void pop_sq(stack_t **tack, unsigned int line_c)
 {
-	stack *l;
+	stack_t *l;
 
-	if (*stack == NULL)
+	if (*tack == NULL)
 	{
 		fprintf(stderr, "L%d: cant't pop an empty stack\n", line_c);
 		frees(*tack);
 		valie = 4;
 		return;
 	}
-	l = *stack;
-	*stack = (*stack)->next;
+	l = *tack;
+	*tack = (*tack)->next;
 	free(l);
 }
