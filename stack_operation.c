@@ -112,7 +112,7 @@ void swap_sq(stack_t **tak, unsigned int line_c)
 
 	if (*tak == NULL || (*tak)->next == NULL)
 	{
-		fprintf(stderr, "L%d:can't swap, stack too short\n",line_c);
+		fprintf(stderr, "L%d: can't swap, stack too short\n",line_c);
 		frees(*tak);
 		valie = 4;
 		return;
