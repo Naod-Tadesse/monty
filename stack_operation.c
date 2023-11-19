@@ -88,7 +88,7 @@ void pop_sq(stack_t **tack, unsigned int line_c)
 
 	if (*tack == NULL)
 	{
-		fprintf(stderr, "L%d: cant't pop an empty stack\n", line_c);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_c);
 		frees(*tack);
 		valie = 4;
 		return;
