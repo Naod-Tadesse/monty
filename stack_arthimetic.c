@@ -73,3 +73,25 @@ void pchar_sq(stack_t **p, unsigned int line_c)
 	}
 	printf("%c\n", ch);
 }
+
+/**
+ * pstr_sq - prints string from stack
+ * @st: the stack
+ * @line_c: the number of lines
+ * Return: nothing
+ */
+
+void pstr_sq(stack_t **st, unsigned int line_c)
+{
+	stack_t *t = *st;
+	(void)line_c;
+
+	while (t != NULL)
+	{
+		if (*st < 0 || *st == 0 || *st > 127)
+			break;
+		printf("%c", t->n);
+		t = t->next;
+	}
+	printf("\n");
+}

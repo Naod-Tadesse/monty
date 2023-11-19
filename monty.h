@@ -53,4 +53,5 @@ void div_sq(stack_t **divon, unsigned int line_c);
 void mul_sq(stack_t **mulon, unsigned int line_c);
 void mod_sq(stack_t **modon, unsigned int line_c);
 void pchar_sq(stack_t **p, unsigned int line_c);
+void pstr_sq(stack_t **st, unsigned int line_c);
 #endif
