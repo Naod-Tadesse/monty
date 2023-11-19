@@ -38,7 +38,7 @@ typedef struct instruction_s
 } instruction_t;
 void push_sq(stack_t **stack, unsigned int line_c);
 void frees(stack_t *head);
-int handle_op(FILE *mfile, stack_t **stack);
+int handle_op(FILE *mfile, stack_t **stack, instruction_t *co_op);
 int _strcmp(char *string1, char *string2);
 char *_strtokenizer(char *str, const char *delimiters);
 int _isdi(char *str);
@@ -46,5 +46,5 @@ void pall_sq(stack_t **tack, unsigned int line_c);
 void pint_sq(stack_t **tack, unsigned int line_c);
 void pop_sq(stack_t **tack, unsigned int line_c);
 void swap_sq(stack_t **tak, unsigned int line_c);
-void add_sq(stack **addon, unsigned int line_c)
+void add_sq(stack_t **addon, unsigned int line_c);
 #endif
