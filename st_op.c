@@ -32,3 +32,15 @@ void add_sq(stack_t **addon, unsigned int line_c)
 	*addon = second_top;
 	free(first_top);
 }
+/**
+ * nop_sq - does nothing
+ * @tak: the stack
+ * @line_c: the number of lines
+ * Return: nothing
+ */
+
+void nop_sq(stack_t **tak, unsigned int line_c)
+{
+	(void)tak;
+	(void)line_c;
+}

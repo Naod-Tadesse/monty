@@ -47,4 +47,5 @@ void pint_sq(stack_t **tack, unsigned int line_c);
 void pop_sq(stack_t **tack, unsigned int line_c);
 void swap_sq(stack_t **tak, unsigned int line_c);
 void add_sq(stack_t **addon, unsigned int line_c);
+void nop_sq(stack_t **tak, unsigned int line_c);
 #endif
