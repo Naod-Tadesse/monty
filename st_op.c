@@ -113,7 +113,39 @@ void div_sq(stack_t **divon, unsigned int line_c)
 	}
 	first_top = *divon;
 	second_top = (*divon)->next;
-	second_top->n = second_top->n - first_top->n;
+	second_top->n = second_top->n / first_top->n;
 	*divon = second_top;
+	free(first_top);
+}
+
+/**
+ * mul_sq - multiplies top two elements
+ * @mulon: the stack
+ * @line_c: the number of lines
+ * Return: nothing
+ */
+void mul_sq(stack_t **mulon, unsigned int line_c)
+{
+	stack_t *first_top;
+	stack_t *second_top;
+
+	if (*mulon == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_c);
+		frees(*mulon);
+		valie = 4;
+		return;
+	}
+	else if ((*mulon)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_c);
+		frees(*mulon);
+		valie = 4;
+		return;
+	}
+	first_top = *mulon;
+	second_top = (*mulon)->next;
+	second_top->n = second_top->n * first_top->n;
+	*mulon = second_top;
 	free(first_top);
 }
