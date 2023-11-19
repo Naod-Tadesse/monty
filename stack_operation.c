@@ -55,3 +55,22 @@ void pall_sq(stack_t **tack, unsigned int line_c)
 		print = print->next;
 	}
 }
+
+/**
+ * pint_sq - prints the top element
+ * @tack: the stack
+ * @line_c: line num
+ * Return: nothing
+ */
+
+void pint_sq(stack_t **tack, unsigned int line_c)
+{
+	if (*tack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_c);
+		frees(*tack);
+		valie = 4;
+		return;
+	}
+	printf("%d\n", (*tack)->n);
+}
