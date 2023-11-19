@@ -45,4 +45,5 @@ int _isdi(char *str);
 void pall_sq(stack_t **tack, unsigned int line_c);
 void pint_sq(stack_t **tack, unsigned int line_c);
 void pop_sq(stack_t **tack, unsigned int line_c);
+void swap_sq(stack_t **tak, unsigned int line_c);
 #endif

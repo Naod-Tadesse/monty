@@ -97,3 +97,29 @@ void pop_sq(stack_t **tack, unsigned int line_c)
 	*tack = (*tack)->next;
 	free(l);
 }
+
+/**
+ * swap_sq - swaps 2 elements in stack
+ * @tak: the stack
+ * @line_c: the number of lines
+ * Return: nothing
+ */
+
+void swap_sq(stack_t **tak, unsigned int line_c)
+{
+	stack_t *top;
+	stack_t *bot;
+
+	if (*tak == NULL || (*tak)->next == NULL)
+	{
+		fprintf(stderr, "L%d:can't swap, stack too short\n",line_c);
+		frees(*tak);
+		valie = 4;
+		return;
+	}
+	top = *tak;
+	bot = top->next;
+	top->next = bot->next;
+	bot->next = top;
+	*tak = bot;
+}
