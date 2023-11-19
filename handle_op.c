@@ -20,6 +20,8 @@ int handle_op(FILE *mfile, stack_t **stack, instruction_t *co_op)
 		i = 0;
 		while (co_op[i].opcode && first)
 		{
+			if (first && first[0] == '#')
+				break;
 			if (strcmp(first, co_op[i].opcode) == 0)
 			{
 				co_op[i].f(stack, line_c);
