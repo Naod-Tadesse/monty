@@ -40,3 +40,32 @@ void mod_sq(stack_t **modon, unsigned int line_c)
 	*modon = second_top;
 	free(first_top);
 }
+
+/**
+ * pchar_sq - converts int to char in the stack
+ * @p: the stack
+ * @line_c: the number of lines
+ * Return: nothing
+ */
+
+void pchar_sq(stack_t **p, line_c)
+{
+	int ch = (*p)->n;
+	stack_t *ht = p;
+
+	if (!ht)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_c);
+		frees(*p);
+		valie = 4;
+		return;
+	}
+	else if (ch < 0 || ch > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_c);
+		frees(*p);
+		valie = 4;
+		return;
+	}
+	printf("%c", ch);
+}

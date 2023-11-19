@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	instruction_t co_op[] = {{"push", push_sq}, {"pall", pall_sq},
 {"pint", pint_sq}, {"pop", pop_sq}, {"swap", swap_sq}, {"add", add_sq},
 {"nop", nop_sq}, {"sub", sub_sq}, {"div", div_sq}, {"mul", mul_sq},
-{"mod", mod_sq}, {NULL, NULL}};
+{"mod", mod_sq}, {"pchar", pchar_sq}, {NULL, NULL}};
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
