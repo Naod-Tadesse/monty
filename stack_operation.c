@@ -14,7 +14,7 @@ void push_sq(stack_t **stack, unsigned int line_c)
 	second = _strtokenizer(NULL, " \n\t");
 	if (!second || !_isdi(second))
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_c);
+		fprintf(stderr, "L%d: usage: push integer\n", line_c);
 		frees(*stack);
 		valie = 4;
 		return;
