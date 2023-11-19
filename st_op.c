@@ -104,6 +104,13 @@ void div_sq(stack_t **divon, unsigned int line_c)
 		valie = 4;
 		return;
 	}
+	else if ((*divon)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_c);
+		frees(*divon);
+		valie = 4;
+		return;
+	}
 	first_top = *divon;
 	second_top = (*divon)->next;
 	second_top->n = second_top->n - first_top->n;
