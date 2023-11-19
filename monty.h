@@ -51,4 +51,5 @@ void nop_sq(stack_t **tak, unsigned int line_c);
 void sub_sq(stack_t **subon, unsigned int line_c);
 void div_sq(stack_t **divon, unsigned int line_c);
 void mul_sq(stack_t **mulon, unsigned int line_c);
+void mod_sq(stack_t **modon, unsigned int line_c);
 #endif
