@@ -50,17 +50,21 @@ void mod_sq(stack_t **modon, unsigned int line_c)
 
 void pchar_sq(stack_t **p, unsigned int line_c)
 {
-	int ch = (*p)->n;
 	stack_t *ht = *p;
+	int ch;
 
-	if (!ht)
+	if (ht == NULL)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_c);
 		frees(*p);
 		valie = 4;
 		return;
 	}
-	else if (ch < 0 || ch > 127)
+	else
+	{
+		ch = ht->n;
+	}
+	if (!(ch > 0 && ch < 127))
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_c);
 		frees(*p);
